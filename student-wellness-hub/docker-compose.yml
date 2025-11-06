@@ -1,0 +1,77 @@
+version: '3.8'
+services:
+  postgres-wellness:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: wellnessdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports: ["5433:5432"]
+    volumes:
+      - pgdata_wellness:/var/lib/postgresql/data
+
+  postgres-event:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: eventdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports: ["5434:5432"]
+    volumes:
+      - pgdata_event:/var/lib/postgresql/data
+
+  mongo:
+    image: mongo:6
+    ports: ["27018:27017"]
+    volumes:
+      - mongodata:/data/db
+
+  redis:
+    image: redis:7
+    ports: ["6379:6379"]
+
+  wellness-service:
+    build:
+      context: ./wellness-service
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-wellness:5432/wellnessdb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_REDIS_HOST: redis
+      SPRING_REDIS_PORT: 6379
+      SERVER_PORT: 8081
+    depends_on:
+      - postgres-wellness
+      - redis
+    ports: ["8091:8081"]
+
+  goal-tracking-service:
+    build:
+      context: ./goal-tracking-service
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongo:27017/goalsdb
+      SERVER_PORT: 8082
+      WELLNESS_SERVICE_URL: http://wellness-service:8081
+    depends_on:
+      - mongo
+      - wellness-service
+    ports: ["8092:8082"]
+
+  event-service:
+    build:
+      context: ./event-service
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-event:5432/eventdb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SERVER_PORT: 8083
+      WELLNESS_SERVICE_URL: http://wellness-service:8081
+    depends_on:
+      - postgres-event
+      - wellness-service
+    ports: ["8093:8083"]
+
+volumes:
+  pgdata_wellness:
+  pgdata_event:
+  mongodata:
