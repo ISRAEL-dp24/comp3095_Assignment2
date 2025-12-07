@@ -1,4 +1,4 @@
-﻿package com.gbc.wellnessservice.test; // <-- PACKAGE CHANGED HERE
+package com.gbc.wellnessservice.test; // <-- PACKAGE CHANGED HERE
 
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;

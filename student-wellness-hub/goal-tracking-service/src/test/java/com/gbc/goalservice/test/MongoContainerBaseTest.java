@@ -1,4 +1,4 @@
-﻿package com.gbc.goalservice.test;
+package com.gbc.goalservice.test;
 
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;

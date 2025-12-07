@@ -1,4 +1,4 @@
-﻿package com.gbc.eventservice.controller;
+package com.gbc.eventservice.controller;
 
 import com.gbc.eventservice.test.PostgreSqlContainerBaseTest;
 import org.junit.jupiter.api.Test;

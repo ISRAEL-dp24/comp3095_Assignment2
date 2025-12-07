@@ -1,4 +1,4 @@
-﻿package com.gbc.goalservice.controller;
+package com.gbc.goalservice.controller;
 
 import com.gbc.goalservice.test.MongoContainerBaseTest;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-﻿package com.gbc.wellnessservice.controller;
+package com.gbc.wellnessservice.controller;
 
 import com.gbc.wellnessservice.test.PostgreSqlContainerBaseTest;
 import org.junit.jupiter.api.Test;

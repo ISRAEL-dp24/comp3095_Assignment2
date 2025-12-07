@@ -5,7 +5,8 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/event-service" />
-        <option name="gradleJvm" value="24" />
+        <option name="gradleHome" value="C:\Users\iamis\Documents\comp3095_in_class\installations\Gradle\gradle-9.0.0" />
+        <option name="gradleJvm" value="21 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/event-service" />
@@ -14,7 +15,8 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/goal-tracking-service" />
-        <option name="gradleJvm" value="24" />
+        <option name="gradleHome" value="C:\Users\iamis\Documents\comp3095_in_class\installations\Gradle\gradle-9.0.0" />
+        <option name="gradleJvm" value="21 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/goal-tracking-service" />
@@ -23,7 +25,8 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/wellness-service" />
-        <option name="gradleJvm" value="24" />
+        <option name="gradleHome" value="C:\Users\iamis\Documents\comp3095_in_class\installations\Gradle\gradle-9.0.0" />
+        <option name="gradleJvm" value="21 (2)" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/wellness-service" />

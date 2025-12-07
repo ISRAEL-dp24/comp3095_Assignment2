@@ -1,4 +1,4 @@
-﻿package com.gbc.eventservice.test;
+package com.gbc.eventservice.test;
 
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;

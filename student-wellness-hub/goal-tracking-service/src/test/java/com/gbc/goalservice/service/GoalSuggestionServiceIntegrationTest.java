@@ -1,4 +1,4 @@
-﻿package com.gbc.goalservice.service;
+package com.gbc.goalservice.service;
 
 import com.gbc.goalservice.test.MongoContainerBaseTest;
 import com.github.tomakehurst.wiremock.client.WireMock;
